@@ -10,7 +10,7 @@ Summary: NetworkManager VPN integration for OpenVPN
 Name: networkmanager-openvpn
 Epoch:   1
 Version: 0.7.0
-Release: %mkrel 10%{svn_snapshot}.1
+Release: %mkrel 2%{svn_snapshot}.1
 License: GPLv2+
 URL: http://www.gnome.org/projects/NetworkManager/
 Group: System/Base
