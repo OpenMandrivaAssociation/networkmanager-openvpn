@@ -7,8 +7,8 @@
 Summary: NetworkManager VPN integration for OpenVPN
 Name: networkmanager-openvpn
 Epoch:   1
-Version: 0.7.0
-Release: %mkrel 12
+Version: 0.7.999
+Release: %mkrel 1
 License: GPLv2+
 URL: http://www.gnome.org/projects/NetworkManager/
 Group: System/Base
@@ -21,15 +21,15 @@ Group: System/Base
 # - mv openvpn NetworkManager-openvpn-%{version}
 # - tar cvfz NetworkManager-openvpn-%{version}.tar.gz NetworkManager-openvpn-%{version}
 Source: http://download.gnome.org/sources/NetworkManager-openvpn/0.7/NetworkManager-openvpn-%version.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk2-devel >= %{gtk2_version}
 BuildRequires: dbus-devel >= %{dbus_version}
-BuildRequires: libnm_util-devel >= %{nm_version}
-BuildRequires: libnm_glib-devel >= %{nm_version}
+BuildRequires: libnm-util-devel >= %{nm_version}
+BuildRequires: libnm-glib-devel >= %{nm_version}
+BuildRequires: libnm-glib-vpn-devel >= %{nm_version}
 BuildRequires: glib2-devel
 BuildRequires: libGConf2-devel
 BuildRequires: gnomeui2-devel
-BuildRequires: gnome-keyring-devel
+BuildRequires: libgnome-keyring-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: libpng-devel
 BuildRequires: perl-XML-Parser
@@ -45,6 +45,7 @@ Requires: openvpn          >= %{openvpn_version}
 Requires: shared-mime-info >= %{shared_mime_version}
 Requires: GConf2
 Requires: gnome-keyring
+BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 This package contains software for integrating the OpenVPN VPN software
