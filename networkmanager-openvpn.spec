@@ -94,4 +94,4 @@ rm -rf %{buildroot}
 %{_datadir}/gnome-vpn-properties/openvpn/nm-openvpn-dialog.glade
 # For now disabled in upstream
 #{_datadir}/applications/nm-openvpn.desktop
-%{_datadir}/icons/hicolor/*/apps/*
+#{_datadir}/icons/hicolor/*/apps/*
