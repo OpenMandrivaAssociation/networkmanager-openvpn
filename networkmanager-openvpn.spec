@@ -92,5 +92,6 @@ rm -rf %{buildroot}
 %config(noreplace) %{_sysconfdir}/dbus-1/system.d/nm-openvpn-service.conf
 %config(noreplace) %{_sysconfdir}/NetworkManager/VPN/nm-openvpn-service.name
 %{_datadir}/gnome-vpn-properties/openvpn/nm-openvpn-dialog.glade
-%{_datadir}/applications/nm-openvpn.desktop
+# For now disabled in upstream
+#{_datadir}/applications/nm-openvpn.desktop
 %{_datadir}/icons/hicolor/*/apps/*
