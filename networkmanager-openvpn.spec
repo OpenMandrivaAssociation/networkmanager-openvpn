@@ -1,4 +1,4 @@
-%define nm_version          0.8.2
+%define nm_version          0.8.3.997
 %define dbus_version        1.1
 %define gtk2_version        2.10.0
 %define openvpn_version     2.1
@@ -7,7 +7,7 @@
 Summary: NetworkManager VPN integration for OpenVPN
 Name: networkmanager-openvpn
 Epoch:   1
-Version: 0.8.2
+Version: 0.8.3.995
 Release: %mkrel 1
 License: GPLv2+
 URL: http://www.gnome.org/projects/NetworkManager/
@@ -22,7 +22,6 @@ BuildRequires: glib2-devel
 BuildRequires: libGConf2-devel
 BuildRequires: gnomeui2-devel
 BuildRequires: libgnome-keyring-devel
-BuildRequires: libglade2.0-devel
 BuildRequires: libpng-devel
 BuildRequires: perl-XML-Parser
 BuildRequires: libtool intltool gettext
@@ -83,7 +82,7 @@ rm -rf %{buildroot}
 %{_libexecdir}/nm-openvpn-service-openvpn-helper
 %config(noreplace) %{_sysconfdir}/dbus-1/system.d/nm-openvpn-service.conf
 %config(noreplace) %{_sysconfdir}/NetworkManager/VPN/nm-openvpn-service.name
-%{_datadir}/gnome-vpn-properties/openvpn/nm-openvpn-dialog.glade
+%{_datadir}/gnome-vpn-properties/openvpn/nm-openvpn-dialog.ui
 # For now disabled in upstream
 #{_datadir}/applications/nm-openvpn.desktop
 #{_datadir}/icons/hicolor/*/apps/*
