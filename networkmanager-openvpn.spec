@@ -1,4 +1,4 @@
-%define nm_version          0.8.3.997
+%define nm_version          0.8.4
 %define dbus_version        1.1
 %define gtk2_version        2.10.0
 %define openvpn_version     2.1
@@ -27,8 +27,6 @@ BuildRequires: perl-XML-Parser
 BuildRequires: libtool intltool gettext
 BuildRequires: perl
 BuildRequires: gnome-common
-Requires(post): desktop-file-utils
-Requires(postun): desktop-file-utils
 Requires: gtk2             >= %{gtk2_version}
 Requires: dbus             >= %{dbus_version}
 Requires: NetworkManager   >= %{nm_version}
