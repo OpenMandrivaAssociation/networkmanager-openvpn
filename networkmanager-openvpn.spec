@@ -1,4 +1,4 @@
-%define nm_version          0.8.4
+%define nm_version          0.9.2.0
 %define dbus_version        1.1
 %define gtk2_version        2.10.0
 %define openvpn_version     2.1
@@ -7,12 +7,12 @@
 Summary: NetworkManager VPN integration for OpenVPN
 Name: networkmanager-openvpn
 Epoch:   1
-Version: 0.8.4
+Version: 0.9.2.0
 Release: %mkrel 1
 License: GPLv2+
 URL: http://www.gnome.org/projects/NetworkManager/
 Group: System/Base
-Source: http://download.gnome.org/sources/NetworkManager-openvpn/0.8/NetworkManager-openvpn-%version.tar.bz2
+Source: http://download.gnome.org/sources/NetworkManager-openvpn/0.9/NetworkManager-openvpn-%{version}.tar.xz
 BuildRequires: gtk2-devel >= %{gtk2_version}
 BuildRequires: dbus-devel >= %{dbus_version}
 BuildRequires: libnm-util-devel >= %{nm_version}
