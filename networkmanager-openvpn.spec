@@ -1,53 +1,52 @@
-%define nm_version          0.8.6.0
-%define dbus_version        1.1
-%define gtk2_version        2.10.0
+%define nm_version          0.9.2.0
 %define openvpn_version     2.1
 %define shared_mime_version 0.16-3
 
-Summary: NetworkManager VPN integration for OpenVPN
-Name: networkmanager-openvpn
-Epoch:   1
-Version: 0.8.6.0
-Release: %mkrel 1
-License: GPLv2+
-URL: http://www.gnome.org/projects/NetworkManager/
-Group: System/Base
-Source: http://download.gnome.org/sources/NetworkManager-openvpn/0.8/NetworkManager-openvpn-%{version}.tar.xz
-BuildRequires: gtk2-devel >= %{gtk2_version}
-BuildRequires: dbus-devel >= %{dbus_version}
-BuildRequires: libnm-util-devel >= %{nm_version}
-BuildRequires: libnm-glib-devel >= %{nm_version}
-BuildRequires: libnm-glib-vpn-devel >= %{nm_version}
-BuildRequires: glib2-devel
-BuildRequires: libGConf2-devel
-BuildRequires: gnomeui2-devel
-BuildRequires: libgnome-keyring-devel
-BuildRequires: libpng-devel
-BuildRequires: perl-XML-Parser
-BuildRequires: libtool intltool gettext
-BuildRequires: perl
+Summary:	NetworkManager VPN integration for OpenVPN
+Name:		networkmanager-openvpn
+Epoch:		1
+Version:	0.9.2.0
+Release:	1
+License:	GPLv2+
+Group:		System/Base
+URL:		http://www.gnome.org/projects/NetworkManager/
+Source0:	http://download.gnome.org/sources/NetworkManager-openvpn/0.8/NetworkManager-openvpn-%{version}.tar.xz
+
+BuildRequires: gettext
 BuildRequires: gnome-common
-Requires: gtk2             >= %{gtk2_version}
-Requires: dbus             >= %{dbus_version}
+BuildRequires: intltool
+BuildRequires: libtool
+BuildRequires: perl-XML-Parser
+BuildRequires: perl
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(dbus-1)
+BuildRequires: pkgconfig(libnm-util) >= %{nm_version}
+BuildRequires: pkgconfig(libnm-glib) >= %{nm_version}
+BuildRequires: pkgconfig(libnm-glib-vpn) >= %{nm_version}
+BuildRequires: pkgconfig(gconf-2.0)
+BuildRequires: pkgconfig(libgnomeui-2.0)
+BuildRequires: pkgconfig(gnome-keyring-1)
+BuildRequires: pkgconfig(libpng15)
+Requires: gtk+3
+Requires: dbus
 Requires: NetworkManager   >= %{nm_version}
 Requires: openvpn          >= %{openvpn_version}
 Requires: shared-mime-info >= %{shared_mime_version}
 Requires: GConf2
 Requires: gnome-keyring
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 This package contains software for integrating the OpenVPN VPN software
 with NetworkManager and the GNOME desktop.
 
 %prep
-%setup -q -n NetworkManager-openvpn-%{version}
+%setup -qn NetworkManager-openvpn-%{version}
 
 %build
-if [ ! -f configure ]; then
-  ./autogen.sh
-fi
-%configure2_5x --disable-static --disable-dependency-tracking
+%configure2_5x \
+	--disable-static \
+	--disable-dependency-tracking
+
 %make
 
 %install
@@ -58,21 +57,7 @@ rm -f %{buildroot}%{_libdir}/NetworkManager/*.la
 
 %find_lang NetworkManager-openvpn
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%{update_desktop_database}
-%update_icon_cache hicolor
-
-%postun
-%{clean_desktop_database}
-%clean_icon_cache hicolor
-%endif
-
 %files -f NetworkManager-openvpn.lang
-%defattr(-, root, root)
 %doc AUTHORS ChangeLog README
 %{_libdir}/NetworkManager/libnm-openvpn-properties.so
 %{_libexecdir}/nm-openvpn-auth-dialog
