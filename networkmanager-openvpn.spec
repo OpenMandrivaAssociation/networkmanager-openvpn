@@ -11,6 +11,8 @@ License:	GPLv2+
 Group:		System/Base
 URL:		http://www.gnome.org/projects/NetworkManager/
 Source0:	http://download.gnome.org/sources/NetworkManager-openvpn/0.8/NetworkManager-openvpn-%{version}.tar.xz
+# ubuntu
+Patch0:	gtk_table_to_gtk_grid.patch
 
 BuildRequires: gettext
 BuildRequires: gnome-common
@@ -41,6 +43,7 @@ with NetworkManager and the GNOME desktop.
 
 %prep
 %setup -qn NetworkManager-openvpn-%{version}
+%apply_patches
 
 %build
 %configure2_5x \
