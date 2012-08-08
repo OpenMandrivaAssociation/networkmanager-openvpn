@@ -10,7 +10,7 @@ Release:	1
 License:	GPLv2+
 Group:		System/Base
 URL:		http://www.gnome.org/projects/NetworkManager/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-openvpn/0.8/NetworkManager-openvpn-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-openvpn/NetworkManager-openvpn-%{version}.tar.xz
 # ubuntu
 Patch0:	gtk_table_to_gtk_grid.patch
 
