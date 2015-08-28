@@ -1,5 +1,2 @@
-removed_sources:
-  NetworkManager-openvpn-0.9.8.0.tar.xz: bf7085a7b700ee09f7724abf9d999d0f33bc6e5f
-  NetworkManager-openvpn-0.9.8.2.tar.xz: 9f73179d1f8ae294d46c5828adb78086daa5a183
 sources:
-  NetworkManager-openvpn-0.9.8.4.tar.xz: 7d51aba888f98906555cdd947123653975b644c9
+  NetworkManager-openvpn-1.0.6.tar.xz: 84433df1ffc8e24b691d9c1bd1c03446cbe63448
