@@ -23,6 +23,7 @@ BuildRequires:	pkgconfig(libnm-glib)
 BuildRequires:	pkgconfig(libnm-glib-vpn)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(libsecret-unstable)
 Requires:	dbus
 Requires:	gnome-keyring
 Requires:	gtk+3
