@@ -1,4 +1,5 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
+%define _disable_lto 1
 
 Summary:	NetworkManager VPN integration for OpenVPN
 Name:		networkmanager-openvpn
@@ -45,7 +46,7 @@ with NetworkManager and the GNOME desktop.
 	--disable-static \
 	--disable-dependency-tracking \
 	--enable-more-warnings \
-	--enable-lto=yes
+	--enable-lto=no
 %make
 
 %install
