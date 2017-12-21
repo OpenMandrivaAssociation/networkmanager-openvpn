@@ -44,7 +44,8 @@ with NetworkManager and the GNOME desktop.
 %configure \
 	--disable-static \
 	--disable-dependency-tracking \
-	--enable-more-warnings
+	--enable-more-warnings \
+	--enable-lto=yes
 %make
 
 %install
