@@ -62,11 +62,12 @@ with NetworkManager and the GNOME desktop.
 %doc AUTHORS ChangeLog README
 %config(noreplace) %{_sysconfdir}/dbus-1/system.d/nm-openvpn-service.conf
 %config(noreplace) %{_sysconfdir}/NetworkManager/VPN/nm-openvpn-service.name
-%{_libdir}/NetworkManager/libnm-openvpn-properties.so
+%{_libdir}/NetworkManager/*.so
 %{_libexecdir}/nm-openvpn-auth-dialog
 %{_libexecdir}/nm-openvpn-service
 %{_libexecdir}/nm-openvpn-service-openvpn-helper
-%{_datadir}/gnome-vpn-properties/openvpn/nm-openvpn-dialog.ui
+%{_prefix}/lib/NetworkManager/VPN/nm-openvpn-service.name
+%{_datadir}/appdata/network-manager-openvpn.metainfo.xml
 # For now disabled in upstream
 #{_datadir}/applications/nm-openvpn.desktop
 #{_datadir}/icons/hicolor/*/apps/*
