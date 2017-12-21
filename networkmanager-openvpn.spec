@@ -3,7 +3,7 @@
 Summary:	NetworkManager VPN integration for OpenVPN
 Name:		networkmanager-openvpn
 Epoch:		1
-Version:	1.0.6
+Version:	1.8.0
 Release:	1
 License:	GPLv2+
 Group:		System/Base
@@ -63,4 +63,3 @@ with NetworkManager and the GNOME desktop.
 # For now disabled in upstream
 #{_datadir}/applications/nm-openvpn.desktop
 #{_datadir}/icons/hicolor/*/apps/*
-
