@@ -32,6 +32,7 @@ Requires:	gtk+3
 Requires:	NetworkManager
 Requires:	openvpn
 Requires:	shared-mime-info
+Requires(pre):	rpm-helper
 
 %description
 This package contains software for integrating the OpenVPN VPN software
@@ -53,6 +54,9 @@ with NetworkManager and the GNOME desktop.
 %makeinstall_std
 
 %find_lang NetworkManager-openvpn
+
+%pre
+%_pre_useradd nm-openvpn %{_localstatedir}/lib/openvpn /bin/false
 
 %files -f NetworkManager-openvpn.lang
 %doc AUTHORS ChangeLog README
