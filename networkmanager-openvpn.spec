@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libsecret-unstable)
 BuildRequires:	pkgconfig(libnma)
+BuildRequires:	rpm-helper
 Requires:	dbus
 Requires:	gnome-keyring
 Requires:	gtk+3
