@@ -4,7 +4,7 @@
 Summary:	NetworkManager VPN integration for OpenVPN
 Name:		networkmanager-openvpn
 Version:	1.8.10
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Url:		http://www.gnome.org/projects/NetworkManager/
@@ -17,10 +17,6 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	perl
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(dbus-1)
-BuildRequires:	pkgconfig(libnm-gtk) >= 1.0.5
-BuildRequires:	pkgconfig(libnm-util)
-BuildRequires:	pkgconfig(libnm-glib)
-BuildRequires:	pkgconfig(libnm-glib-vpn)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libsecret-unstable)
@@ -47,11 +43,12 @@ with NetworkManager and the GNOME desktop.
 	--disable-static \
 	--disable-dependency-tracking \
 	--enable-more-warnings \
-	--enable-lto=no
-%make
+	--enable-lto=no \
+	--without-libnm-glib
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang NetworkManager-openvpn
 
@@ -61,7 +58,6 @@ with NetworkManager and the GNOME desktop.
 %files -f NetworkManager-openvpn.lang
 %doc AUTHORS ChangeLog README
 %config(noreplace) %{_sysconfdir}/dbus-1/system.d/nm-openvpn-service.conf
-%config(noreplace) %{_sysconfdir}/NetworkManager/VPN/nm-openvpn-service.name
 %{_libdir}/NetworkManager/*.so
 %{_libexecdir}/nm-openvpn-auth-dialog
 %{_libexecdir}/nm-openvpn-service
