@@ -57,7 +57,7 @@ with NetworkManager and the GNOME desktop.
 
 %files -f NetworkManager-openvpn.lang
 %doc AUTHORS ChangeLog README
-#%config(noreplace) %{_sysconfdir}/dbus-1/system.d/nm-openvpn-service.conf
+%{_datadir}/dbus-1/system.d/nm-openvpn-service.conf
 %{_libdir}/NetworkManager/*.so
 %{_libexecdir}/nm-openvpn-auth-dialog
 %{_libexecdir}/nm-openvpn-service
