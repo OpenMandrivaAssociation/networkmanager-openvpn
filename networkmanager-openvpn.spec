@@ -4,7 +4,7 @@
 Summary:	NetworkManager VPN integration for OpenVPN
 Name:		networkmanager-openvpn
 Version:	1.8.12
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Url:		http://www.gnome.org/projects/NetworkManager/
@@ -23,7 +23,6 @@ BuildRequires:	pkgconfig(libsecret-unstable)
 BuildRequires:	pkgconfig(libnma)
 BuildRequires:	rpm-helper
 Requires:	dbus
-Requires:	gnome-keyring
 Requires:	gtk+3
 Requires:	NetworkManager
 Requires:	openvpn
@@ -45,6 +44,7 @@ with NetworkManager and the GNOME desktop.
 	--enable-more-warnings \
 	--enable-lto=no \
 	--without-libnm-glib
+
 %make_build
 
 %install
