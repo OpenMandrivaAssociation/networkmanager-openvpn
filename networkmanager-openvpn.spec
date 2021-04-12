@@ -63,7 +63,5 @@ with NetworkManager and the GNOME desktop.
 %{_libexecdir}/nm-openvpn-service
 %{_libexecdir}/nm-openvpn-service-openvpn-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-openvpn-service.name
-#{_datadir}/metainfo/appdata/network-manager-openvpn.metainfo.xml
-# For now disabled in upstream
-#{_datadir}/applications/nm-openvpn.desktop
-#{_datadir}/icons/hicolor/*/apps/*
+%{_datadir}/metainfo/network-manager-openvpn.metainfo.xml
+
