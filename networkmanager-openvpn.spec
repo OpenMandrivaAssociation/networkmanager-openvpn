@@ -1,5 +1,4 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
-%define _disable_lto 1
 
 Summary:	NetworkManager VPN integration for OpenVPN
 Name:		networkmanager-openvpn
@@ -22,7 +21,6 @@ BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libsecret-unstable)
 BuildRequires:	pkgconfig(libnma)
 Requires:	dbus
-Requires:	gtk+3
 Requires:	NetworkManager
 Requires:	openvpn
 Requires:	shared-mime-info
@@ -31,18 +29,24 @@ Requires:	shared-mime-info
 This package contains software for integrating the OpenVPN VPN software
 with NetworkManager and the GNOME desktop.
 
-%prep
-%setup -qn NetworkManager-openvpn-%{version}
-%autopatch -p1
+%package gtk
+Summary:	GTK frontend for configuring OpenVPN connections with NetworkManager
+Group:		Tools
+Requires:	%{name} = %{EVRD}
+Supplements:	networkmanager-applet
 
-%build
+%description gtk
+GTK frontend for configuring OpenVPN connections with NetworkManager
+
+%prep
+%autosetup -p1 -n NetworkManager-openvpn-%{version}
 %configure \
 	--disable-static \
 	--disable-dependency-tracking \
 	--enable-more-warnings \
-	--enable-lto=no \
 	--without-libnm-glib
 
+%build
 %make_build
 
 %install
@@ -55,9 +59,12 @@ install -D -p -m 644 %{SOURCE1} %{buildroot}%{_sysusersdir}/%{name}.conf
 %doc AUTHORS ChangeLog README
 %{_sysusersdir}/%{name}.conf
 %{_datadir}/dbus-1/system.d/nm-openvpn-service.conf
-%{_libdir}/NetworkManager/*.so
-%{_libexecdir}/nm-openvpn-auth-dialog
+%{_libdir}/NetworkManager/libnm-vpn-plugin-openvpn.so
 %{_libexecdir}/nm-openvpn-service
 %{_libexecdir}/nm-openvpn-service-openvpn-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-openvpn-service.name
 %{_datadir}/metainfo/network-manager-openvpn.metainfo.xml
+
+%files gtk
+%{_libdir}/NetworkManager/libnm-vpn-plugin-openvpn-editor.so
+%{_libexecdir}/nm-openvpn-auth-dialog
