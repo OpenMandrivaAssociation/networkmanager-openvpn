@@ -15,6 +15,7 @@ BuildRequires:	intltool
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libpng)
