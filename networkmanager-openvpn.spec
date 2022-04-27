@@ -46,7 +46,8 @@ GTK frontend for configuring OpenVPN connections with NetworkManager
 	--disable-static \
 	--disable-dependency-tracking \
 	--enable-more-warnings \
-	--without-libnm-glib
+	--without-libnm-glib \
+	--with-gtk4
 
 %build
 %make_build
