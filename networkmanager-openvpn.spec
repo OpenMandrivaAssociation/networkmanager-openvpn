@@ -9,6 +9,7 @@ Group:		System/Base
 Url:		http://www.gnome.org/projects/NetworkManager/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-openvpn/%{url_ver}/NetworkManager-openvpn-%{version}.tar.xz
 Source1:	%{name}.sysusers
+Patch0:		https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/merge_requests/44.patch
 BuildRequires:	gettext
 BuildRequires:	libtool
 BuildRequires:	intltool
