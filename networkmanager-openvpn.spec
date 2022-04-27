@@ -9,6 +9,7 @@ Group:		System/Base
 Url:		http://www.gnome.org/projects/NetworkManager/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-openvpn/%{url_ver}/NetworkManager-openvpn-%{version}.tar.xz
 Source1:	%{name}.sysusers
+# fix for https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/issues/88
 Patch0:		https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/merge_requests/44.patch
 BuildRequires:	gettext
 BuildRequires:	libtool
@@ -47,7 +48,7 @@ GTK frontend for configuring OpenVPN connections with NetworkManager
 	--disable-dependency-tracking \
 	--enable-more-warnings \
 	--without-libnm-glib \
-	--with-gtk4
+	--with-gtk4=yes
 
 %build
 %make_build
@@ -70,4 +71,5 @@ install -D -p -m 644 %{SOURCE1} %{buildroot}%{_sysusersdir}/%{name}.conf
 
 %files gtk
 %{_libdir}/NetworkManager/libnm-vpn-plugin-openvpn-editor.so
+%{_libdir}/NetworkManager/libnm-gtk4-vpn-plugin-openvpn-editor.so
 %{_libexecdir}/nm-openvpn-auth-dialog
