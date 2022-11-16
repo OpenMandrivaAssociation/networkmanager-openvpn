@@ -59,7 +59,7 @@ install -D -p -m 644 %{SOURCE1} %{buildroot}%{_sysusersdir}/%{name}.conf
 %find_lang NetworkManager-openvpn
 
 %files -f NetworkManager-openvpn.lang
-%doc AUTHORS ChangeLog README
+%doc AUTHORS README
 %{_sysusersdir}/%{name}.conf
 %{_datadir}/dbus-1/system.d/nm-openvpn-service.conf
 %{_libdir}/NetworkManager/libnm-vpn-plugin-openvpn.so
